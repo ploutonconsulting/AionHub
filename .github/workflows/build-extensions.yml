@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'extensions/**'
+      - 'scripts/**'
   workflow_dispatch:
 
 jobs:
@@ -27,6 +28,15 @@ jobs:
 
       - name: Setup system zip
         run: sudo apt-get update && sudo apt-get install -y zip
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      # Fails the build if any extensions/*/scripts/install.ts was hand-edited
+      # instead of regenerated from scripts/adapters.json. Runs before packaging
+      # so a drifted script is never published to the dist branch.
+      - name: Verify install scripts match adapters.json
+        run: bun run scripts/generate-install-scripts.ts --check
 
       - name: Build and Package Extensions
         run: node .github/scripts/build-extensions.js

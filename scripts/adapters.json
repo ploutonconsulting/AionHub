@@ -1,0 +1,73 @@
+{
+  "$comment": [
+    "Single source of truth for the per-extension scripts/install.ts files.",
+    "Edit pins here, then run: bun run scripts/generate-install-scripts.ts",
+    "Verify nothing drifted:   bun run scripts/generate-install-scripts.ts --check",
+    "Do NOT hand-edit extensions/*/scripts/install.ts - regenerate instead.",
+    "",
+    "Kept out of aion-extension.json deliberately: the upstream manifest schema",
+    "sets additionalProperties:false, and its `dependencies` field means",
+    "{ extensionName: versionRange } for AionHub extensions - not npm packages."
+  ],
+  "pinnedAt": "2026-07-26",
+  "adapters": {
+    "aionext-auggie": {
+      "kind": "npm",
+      "binName": "auggie",
+      "binTarget": "auggie",
+      "trust": false,
+      "packages": [{ "name": "@augmentcode/auggie", "version": "0.33.0" }]
+    },
+    "aionext-claude": {
+      "kind": "npm",
+      "binName": "claude",
+      "binTarget": "claude-agent-acp",
+      "trust": false,
+      "packages": [
+        { "name": "@anthropic-ai/claude-code", "version": "2.1.220" },
+        { "name": "@agentclientprotocol/claude-agent-acp", "version": "0.62.0" }
+      ]
+    },
+    "aionext-codebuddy": {
+      "kind": "npm",
+      "binName": "codebuddy",
+      "binTarget": "codebuddy",
+      "trust": false,
+      "packages": [{ "name": "@tencent-ai/codebuddy-code", "version": "2.127.2" }]
+    },
+    "aionext-codex": {
+      "kind": "npm",
+      "binName": "codex",
+      "binTarget": "codex-acp",
+      "trust": false,
+      "packages": [
+        { "name": "@openai/codex", "version": "0.145.0" },
+        { "name": "@zed-industries/codex-acp", "version": "0.16.0" }
+      ]
+    },
+    "aionext-goose": {
+      "kind": "github-release",
+      "binName": "goose",
+      "displayName": "Goose",
+      "repo": "block/goose",
+      "tag": "v1.44.0",
+      "unsupportedPlatforms": {
+        "win32": "Goose does not support Windows. Please visit https://github.com/block/goose for manual installation."
+      }
+    },
+    "aionext-opencode": {
+      "kind": "npm",
+      "binName": "opencode",
+      "binTarget": "opencode",
+      "trust": true,
+      "packages": [{ "name": "opencode-ai", "version": "1.18.5" }]
+    },
+    "aionext-qwen": {
+      "kind": "npm",
+      "binName": "qwen",
+      "binTarget": "qwen",
+      "trust": true,
+      "packages": [{ "name": "@qwen-code/qwen-code", "version": "0.21.0" }]
+    }
+  }
+}

@@ -4,7 +4,9 @@
     "email": "service@aionui.com"
   },
   "scripts": {
-    "server": "rm -rf dist/ && node .github/scripts/build-extensions.js && bun run kits/server"
+    "server": "rm -rf dist/ && node .github/scripts/build-extensions.js && bun run kits/server",
+    "generate:install": "bun run scripts/generate-install-scripts.ts",
+    "check:install": "bun run scripts/generate-install-scripts.ts --check"
   },
   "dependencies": {},
   "devDependencies": {
