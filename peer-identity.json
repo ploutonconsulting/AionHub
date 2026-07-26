@@ -1,6 +1,6 @@
 {
-  "peer_name": "aionhub",
-  "alias": "aionhub",
+  "peer_name": "nexus",
+  "alias": "nexus",
   "guid": "ab59410c-3521-4e4a-b957-9a84b93deb07",
   "cwd": "/Users/pierreo/Development/Projects/agora/AionHub",
   "colour": "blue",
@@ -9,9 +9,9 @@
   "classification": "project_developer",
   "nats_url": "nats://192.168.0.190:4222",
   "nats_stream": "PEERS",
-  "publish_subject": "peer.aionhub.inbox",
-  "subscribe_filter": "peer.aionhub.>",
+  "publish_subject": "peer.nexus.inbox",
+  "subscribe_filter": "peer.nexus.>",
   "consumer_name": "ab59410c-3521-4e4a-b957-9a84b93deb07",
   "last_context_review": "2026-07-25",
-  "last_optimised": "2026-07-25"
+  "last_optimised": "2026-07-26"
 }
